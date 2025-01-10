@@ -1,27 +1,19 @@
-import { SHeader, SNavBar } from "./styles";
-impot Logo  "../../assets/logo.png"
-export function Header(){
-    return(
-        <SHeader>
-            <picture>
-                <img src="{Logo}" alt="Logo" />
-            </picture>
-            <SNavBar>
-                <input id="menu-toggle" type="checkbox" />
-                <label htmlFor="menu-toggle">
-                    <div className="menu-hamburger">
-                        <span className="hamburger" />
-                    </div>
-                </label>
-                <ul>
-                    <li>
-                        <a href="/">Página Inicial</a>
-                    </li>
-                    <li>
-                        <a href="/lista">Lista</a>
-                    </li>
-                </ul>
-            </SNavBar>
-        </SHeader>
-    )
+import { Link } from "react-router-dom"
+import { SHeader, SNavBar } from "./styles"
+import Logo from "../../assets/logo.png"
+export function Header() {
+
+  return (
+    <SHeader>
+      <figure>
+        <img src={Logo} alt="Logo do site" />
+      </figure>
+      <SNavBar>
+        <div>
+          <Link to="/">Início</Link>
+          <Link to="/comentario">Comentário</Link>
+        </div>
+      </SNavBar>
+    </SHeader>
+  )
 }
